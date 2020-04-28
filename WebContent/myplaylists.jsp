@@ -41,35 +41,33 @@
 			<div class="col-md-2">
 				&nbsp;
 			</div>
-			<div class="col-md-8">
-				<ul class="nav">
-					<li class="nav-item ">
-						<a class="nav-link" class="botaospt" href="#">Nova Playlist      </a>
-					</li>
-					<li class="nav-item ">
-						<a class="nav-link" class="botaospt" href="playlists">Minhas Playlists      </a>
-					</li>
-					<li class="nav-item ">
-						<a class="nav-link" class="botaospt" href="#">Upload Musica      </a>
-					</li>
-				</ul>	
+			<div class="col-md-2 botao">
+					<span class="text-center"> <a class="botaospt" href="novamusica">Upload</a> </span>
+				</div>
+				
+				<div class="col-md-2 botao">
+					<span class="text-center"> <a class="botaospt" href="playlists">Minhas Playlists</a> </span>
+				</div>
+				
+				<div class="col-md-2 botao">
+					<span class="text-center"> <a class="botaospt" href="novaplaylist">Add Playlist</a> </span>
+				</div>
+				
+				<div class="col-md-2 botao">
+					<span class="text-center"><a class="botaospt" href="logout"> Logout</a> </span>
+				</div>		
 			</div>
 			<div class="col-md-2">
 				&nbsp;
 			</div>
 			
-		</div>
 		<c:forEach var="playlist" items="${Usuario.playlists}">
 		<!-- varias iteracoes -->
 			<div class="row">
 				<div class="col-md-2"> &nbsp; </div>
 				<div class="col-md-8"> 
-					<strong>${playlist.titulo}</strong><br/>
-					<ul>
-					<c:forEach var="musica" items="${playlist.musicas}">
-						<li>${musica.titulo} (${musica.artista})</li>	
-					</c:forEach>
-					</ul>
+					<strong><a href="playlistdetails?id=${playlist.id}">${playlist.titulo}</a></strong><br/>
+					
 				 </div>
 				<div class="col-md-2"> &nbsp; </div>
 			</div>	

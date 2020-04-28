@@ -40,7 +40,7 @@ public class UploadMusicaServlet extends HttpServlet {
 		             String nomeArquivo = getServletContext().getRealPath("/")+"/musicas/"+request.getPart("fileMP3").getSubmittedFileName();
 					
 					
-					//System.out.println("Nome "+nomeArquivo);
+					System.out.println("Nome "+nomeArquivo);
 					
 					FileOutputStream arquivoMP3 = new FileOutputStream(nomeArquivo);
 					byte b[] = new byte[1024];

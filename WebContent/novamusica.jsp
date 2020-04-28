@@ -34,10 +34,35 @@
 		<div class="row">
 			<div class="text-center col-md-12">
 				<h4>
-					Crie sua playlist ${Usuario.nome} 
+					Upload de Musicas ${Usuario.nome} 
 				</h4>
 			</div>
 		</div>
+		
+		<div class="row" id="menu">
+			<div class="col-md-2">
+				&nbsp;
+			</div>
+			<div class="col-md-2 botao">
+					<span class="text-center"> <a class="botaospt" href="novamusica">Upload</a> </span>
+				</div>
+				
+				<div class="col-md-2 botao">
+					<span class="text-center"> <a class="botaospt" href="playlists">Minhas Playlists</a> </span>
+				</div>
+				
+				<div class="col-md-2 botao">
+					<span class="text-center"> <a class="botaospt" href="novaplaylist">Add Playlist</a> </span>
+				</div>
+				
+				<div class="col-md-2 botao">
+					<span class="text-center"><a class="botaospt" href="logout"> Logout</a> </span>
+				</div>		
+			</div>
+			
+			<div class="col-md-2">
+				&nbsp;
+			</div>
 		
 			<div class="row">
 				<div class="col-md-2"></div>

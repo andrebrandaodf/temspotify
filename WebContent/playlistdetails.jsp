@@ -1,6 +1,10 @@
 <!DOCTYPE html>
+<%@page import="javax.servlet.descriptor.TaglibDescriptor"%>
 <jsp:useBean id="Usuario"
 	type="br.com.professorisidro.temspotify.model.Usuario" scope="session" />
+<jsp:useBean id="PlayList" type="br.com.professorisidro.temspotify.model.PlayList" scope="session"/>	
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -31,10 +35,10 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<h4 class="text-center">Bem vindo!!! ${Usuario.nome}</h4>
+				<h4 class="text-center">Detalhes da Playlist </h4>
 			</div>
 		</div>
-		<div class="row" id="conteudo">
+		<div class="row" id="menu">
 			<div class="col-md-2">
 				&nbsp;
 			</div>
@@ -54,9 +58,42 @@
 					<span class="text-center"><a class="botaospt" href="logout"> Logout</a> </span>
 				</div>		
 			</div>
-		<div class="col-md-2">
-			&nbsp;
+			<div class="col-md-2">
+				&nbsp;
+			</div>
+		
+			<div class="row">
+				<div class="col-md-2">&nbsp;</div>
+				<div class="col-md-8">
+					<h4>${PlayList.titulo} <a href="player"><img id="imgplay" src="images/play.png" alt="Tocar Playlist" title="Tocar Playlist"></a></h4>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-md-2">&nbsp;</div>
+				<div class="col-md-8">
+					<h5> <a href="./recuperamusicas?idplaylist=${PlayList.id}"> + Adicionar M&uacute;sicas </a> </h5>
+				</div>
+			</div>
+		
+		
+		<c:forEach var="Musica" items="${PlayList.musicas}">
+			<div class="row">
+			<div class="col-md-2">&nbsp;</div>
+			<div class="col-md-8">
+				<span class="tituloMusica">
+					${Musica.titulo} 
+				</span>
+				<span class="artista">
+					${Musica.artista}(Album: ${Musica.album})
+				</span>
+			</div>
+			<div class="col-md-2">&nbsp;</div>
 		</div>
+		</c:forEach>	
+		
+		
+		
 	</div>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
